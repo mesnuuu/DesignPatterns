@@ -23,6 +23,7 @@ import java.util.List;
             return "{\"message\": \"Hello World\"}";
         }
 
+        // Factory Pattern
         @PostMapping("adoptPet/{type}/{name}")
         public Pet adoptPet(@PathVariable String type, @PathVariable String name) {
             Pet pet = this.petFactory.createPet(type);
@@ -31,6 +32,7 @@ import java.util.List;
             return pet;
         }
 
+        // Builder Pattern
         @GetMapping("presidents")
         public List<Contact> getPresidents(){
 
