@@ -2,6 +2,7 @@ package com.mesnu.app;
 
 import com.mesnu.app.prototype.ProtoFalse;
 import com.mesnu.app.prototype.ProtoTrue;
+import com.mesnu.app.repository.PresidentRepository;
 import com.mesnu.app.singleton.SingA;
 import com.mesnu.app.singleton.SingB;
 
@@ -26,9 +27,16 @@ class DesignPatternsApplicationTests {
     ProtoFalse false1;
     @Autowired
     ProtoFalse false2;
+
+    @Autowired
+    PresidentRepository presidentRepository;
+
     @Test
-    void contextLoads() {
+    public void testRepository(){
+        System.out.println(presidentRepository.findById(1L));
+        System.out.println(presidentRepository.findById(2L));
     }
+
 
     @Test
     public void testPrototypes(){
